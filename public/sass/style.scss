@@ -1,0 +1,21 @@
+@import "./variables.scss";
+
+body {
+  margin: auto 0;
+}
+
+header {
+  background-image: url(../images/desktop/bg-pattern-header.svg);
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 160px;
+  border-radius: 0 0 0 100px;
+  padding: 0 150px 0 150px;
+  h1 {
+    color: $white;
+    font-size: 32px;
+    font-family: KumbhSans;
+  }
+}
