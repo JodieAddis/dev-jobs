@@ -1,10 +1,15 @@
 import IconLogo from "../../Icons/IconLogo";
+import ToggleBar from "../ToggleBar";
 
 const Component = () => {
   return (
     <>
-      <IconLogo />
-      <p>toggle bar</p>
+      <div className="logo">
+        <IconLogo />
+      </div>
+      <div className="toggle_bar">
+        <ToggleBar />
+      </div>
     </>
   );
 };
