@@ -1,0 +1,56 @@
+.company_logo {
+  width: 50px;
+  height: 50px;
+  background-color: #e99210;
+  border-radius: 15px;
+  position: absolute;
+  top: -25px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company_job {
+  background-color: $veryDarkBlue;
+  width: 327px;
+  height: 228px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 40px 0;
+  .job_contract {
+    padding-top: 40px;
+  }
+  .job_company_name {
+    padding-top: 15px;
+  }
+  .job_contract,
+  .job_company_name {
+    color: $darkGrey;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .job_name {
+    color: $white;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding-top: 15px;
+  }
+  .job_location {
+    color: $violet;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    padding-top: 40px;
+  }
+  .job_contract,
+  .job_company_name,
+  .job_name,
+  .job_location {
+    margin: 0;
+    padding-left: 30px;
+  }
+}
