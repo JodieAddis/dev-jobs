@@ -1,0 +1,81 @@
+@import "./mixins.scss";
+
+.heading_job_page {
+  @include container-section($veryDarkBlue, 327px, 205px, 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  .job_page_company_logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -25px;
+  }
+  .job_page_company_details {
+    text-align: center;
+    margin-top: 25px;
+    .company_details_name {
+      color: $white;
+      text-transform: capitalize;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .company_details_site {
+      color: $darkGrey;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    .company_details_button {
+      width: 147px;
+      height: 48px;
+      @include background-opacity($violet, 0.1);
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      margin-top: 10px;
+      .button_site {
+        color: $violet;
+        text-transform: capitalize;
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.content_job_page {
+  margin-top: 25px;
+  @include container-section($veryDarkBlue, 327px, 400px, 10px);
+  .job_page_content {
+    color: $darkGrey;
+  }
+  .content_job_name {
+    color: $white;
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  .content_job_location {
+    color: $violet;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .content_job_button {
+    @include button(279px, 48px, $violet, 10px);
+    a {
+      color: $white;
+      text-decoration: none;
+      font-size: 16px;
+      text-transform: capitalize;
+      font-weight: 700;
+    }
+  }
+}

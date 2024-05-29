@@ -15,7 +15,7 @@ const Component = () => {
           css={"job_name"}
         />
         <Paragraph content="Scoot" css="job_company_name" />
-        <a href="#" className="job_location">
+        <a href="/details" className="job_location">
           United Kingdom
         </a>
       </div>

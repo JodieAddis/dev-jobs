@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../Button";
-import IconDarkmode from "../../Icons/IconDarkmode";
+import IconDarkmode from "../../icons/IconDarkmode";
 
 const Component = () => {
   const [toggled, setToggled] = useState<boolean>(false);
