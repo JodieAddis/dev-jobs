@@ -56,15 +56,28 @@ const Component = () => {
         </div>
         <div>
           <div>
-            <Paragraph content={undefined} css="" />
+            <Paragraph
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+              css="job_text_elem"
+            />
           </div>
           <div>
-            <Heading kind="h3" content="requirements" css="" />
-            <Paragraph content="" css="" />
+            <Heading kind="h3" content="requirements" css="job_heading_elem" />
+            <Paragraph
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              css="job_text_elem"
+            />
           </div>
           <div>
-            <Heading kind="h3" content="" css="" />
-            <Paragraph content="what you will do" css="" />
+            <Heading
+              kind="h3"
+              content="what you will do"
+              css="job_heading_elem"
+            />
+            <Paragraph
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              css="job_text_elem"
+            />
           </div>
         </div>
       </section>
