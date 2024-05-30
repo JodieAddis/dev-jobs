@@ -1,14 +1,16 @@
+import { BgForLogos } from "../../../utils/swtichValue";
+import data from "../../../data/data.json";
 import Heading from "../../../typographies/Heading";
 import Paragraph from "../../../typographies/Paragraph";
-import data from "../../../data/data.json";
-import { BgForLogos } from "../../../utils/swtichValue";
+import { Link, useParams } from "react-router-dom";
 
 const Component = () => {
+  let { jobId } = useParams();
   return (
     <>
       {data.map((job, key) => {
         return (
-          <div className="company_job" key={key}>
+          <Link className="company_job" key={key} to={`/${job.id}`}>
             <div
               className={`company_logo ${BgForLogos(
                 job.company.toLowerCase()
@@ -28,10 +30,8 @@ const Component = () => {
             </div>
             <Heading kind="h2" content={job.position} css={"job_name"} />
             <Paragraph content={job.company} css="job_company_name" />
-            <a href="/details" className="job_location">
-              {job.location}
-            </a>
-          </div>
+            <Paragraph content={job.location} css="job_location" />
+          </Link>
         );
       })}
     </>
