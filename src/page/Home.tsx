@@ -7,9 +7,17 @@ const Page = () => {
       <header className="header">
         <Header />
       </header>
-      <main className="job_ads_container">
-        <DevJobCard />
-        <DevJobCard />
+      <main>
+        <div className="cards_container">
+          <DevJobCard />
+          <DevJobCard />
+          <DevJobCard />
+          <DevJobCard />
+          <DevJobCard />
+          <DevJobCard />
+          <DevJobCard />
+          <DevJobCard />
+        </div>
       </main>
       <footer></footer>
     </>

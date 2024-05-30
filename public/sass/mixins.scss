@@ -1,0 +1,26 @@
+@mixin logo-company {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@mixin container-section($color, $width, $height, $radius) {
+  background-color: $color;
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+}
+
+@mixin button($width, $height, $background, $radius) {
+  width: $width;
+  height: $height;
+  background-color: $background;
+  border-radius: $radius;
+  border: none;
+  outline: none;
+}

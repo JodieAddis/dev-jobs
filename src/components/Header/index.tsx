@@ -1,4 +1,4 @@
-import IconLogo from "../../Icons/IconLogo";
+import IconLogo from "../../icons/IconLogo";
 import ToggleBar from "../ToggleBar";
 
 const Component = () => {
