@@ -10,13 +10,6 @@ const Page = () => {
       <main>
         <div className="cards_container">
           <DevJobCard />
-          <DevJobCard />
-          <DevJobCard />
-          <DevJobCard />
-          <DevJobCard />
-          <DevJobCard />
-          <DevJobCard />
-          <DevJobCard />
         </div>
       </main>
       <footer></footer>

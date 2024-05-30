@@ -3,7 +3,6 @@
 .company_logo {
   width: 50px;
   height: 50px;
-  background-color: #e99210;
   border-radius: 15px;
   position: absolute;
   top: -25px;
@@ -11,6 +10,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.scoot_logo {
+  background-color: $scoot;
+}
+.blogr_logo {
+  background-color: $blogr;
+}
+.vector_logo {
+  background-color: $vector;
+}
+.office_logo {
+  background-color: $office-lite;
+}
+.pod_logo {
+  background-color: $pod;
+}
+.creative_logo {
+  background-color: $creative;
+}
+.pomodoro_logo {
+  background-color: $pomodoro;
+}
+.maker_logo {
+  background-color: $maker;
+}
+.coffee_logo {
+  background-color: $coffee-roasters;
+}
+.mastercraft_logo {
+  background-color: $mastercraft;
+}
+.typemaster_logo {
+  background-color: $type-master;
+}
+.crowdfund_logo {
+  background-color: $crowdfund;
 }
 
 .company_job {
