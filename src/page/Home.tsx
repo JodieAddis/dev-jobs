@@ -1,18 +1,14 @@
 import DevJobCard from "../components/DevJob/DevJobCard";
-import Header from "../components/Header";
+import Layout from "../layout/Layout";
 
 const Page = () => {
   return (
     <>
-      <header className="header">
-        <Header />
-      </header>
-      <main>
+      <Layout>
         <div className="cards_container">
           <DevJobCard />
         </div>
-      </main>
-      <footer></footer>
+      </Layout>
     </>
   );
 };

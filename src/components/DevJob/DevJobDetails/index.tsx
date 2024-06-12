@@ -3,6 +3,7 @@ import Heading from "../../../typographies/Heading";
 import Paragraph from "../../../typographies/Paragraph";
 import { useParams } from "react-router-dom";
 import dataJob from "../../../data/data.json";
+import Error404 from "../../Error404";
 
 const Component = () => {
   const { jobId } = useParams();
@@ -10,7 +11,7 @@ const Component = () => {
   const job = dataJob.find((job) => job.id === jobIdNum);
 
   if (!job) {
-    return <div>Offre d'emploi non trouvée</div>;
+    return <Error404 />;
   }
   return (
     <>
