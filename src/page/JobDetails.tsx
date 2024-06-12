@@ -1,16 +1,14 @@
 import DevJobDetails from "../components/DevJob/DevJobDetails";
-import Header from "../components/Header";
+import Layout from "../layout/Layout";
 
 const Page = () => {
   return (
     <>
-      <header className="header">
-        <Header />
-      </header>
-      <main className="job_ads_container">
-        <DevJobDetails />
-      </main>
-      <footer></footer>
+      <Layout>
+        <div className="job_ads_container">
+          <DevJobDetails />
+        </div>
+      </Layout>
     </>
   );
 };

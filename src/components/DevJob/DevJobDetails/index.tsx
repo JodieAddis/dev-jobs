@@ -1,53 +1,36 @@
+import Button from "../../Button";
 import Heading from "../../../typographies/Heading";
 import Paragraph from "../../../typographies/Paragraph";
-import Button from "../../Button";
+import { useParams } from "react-router-dom";
+import dataJob from "../../../data/data.json";
+import Error404 from "../../Error404";
 
 const Component = () => {
+  const { jobId } = useParams();
+  const jobIdNum = Number(jobId); //conversion en nombre de l'id string
+  const job = dataJob.find((job) => job.id === jobIdNum);
+
+  if (!job) {
+    return <Error404 />;
+  }
   return (
     <>
-      <section className="heading_job_page">
-        <div className="job_page_company_logo">logo</div>
-        <div className="job_page_company_details">
-          <Heading kind="h2" content="scoot" css="company_details_name" />
-          <Paragraph content="scoot.com" css="company_details_site" />
-          <Button
-            content={
-              <>
-                <a href="#" className="button_site">
-                  company site
-                </a>
-              </>
-            }
-            onclick={() => {}}
-            css="company_details_button"
-          />
-        </div>
-      </section>
       <section className="content_job_page">
         <div className="job_page_content">
           <Paragraph
-            content="1w ago Part Time"
-            css="content_contract_details"
-          />
-          <Heading
-            kind="h2"
-            content="senior software engineer"
-            css="content_job_name"
-          />
-          <Paragraph
             content={
               <>
-                <a href="#" className="content_job_location">
-                  united kingdom
-                </a>
+                {job.postedAt} • {job.contract}
               </>
             }
-            css=""
+            css="content_contract_details"
           />
+          <Heading kind="h2" content={job.position} css="content_job_name" />
+          <Paragraph content={job.location} css="content_job_location" />
           <Button
             content={
               <>
-                <a href="#">apply now</a>
+                <a href={job.apply}>apply now</a>
               </>
             }
             onclick={() => {}}
@@ -56,17 +39,12 @@ const Component = () => {
         </div>
         <div>
           <div>
-            <Paragraph
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
-              css="job_text_elem"
-            />
+            <Paragraph content={job.description} css="job_text_elem" />
           </div>
           <div>
             <Heading kind="h3" content="requirements" css="job_heading_elem" />
-            <Paragraph
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-              css="job_text_elem"
-            />
+            <Paragraph content={job.requirements.content} css="job_text_elem" />
+            <Paragraph content={job.requirements.items} css="job_text_elem" />
           </div>
           <div>
             <Heading
@@ -74,10 +52,7 @@ const Component = () => {
               content="what you will do"
               css="job_heading_elem"
             />
-            <Paragraph
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-              css="job_text_elem"
-            />
+            <Paragraph content={job.role.content} css="job_text_elem" />
           </div>
         </div>
       </section>
