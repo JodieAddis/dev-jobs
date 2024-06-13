@@ -3,11 +3,13 @@ import data from "../../../data/data.json";
 import Heading from "../../../typographies/Heading";
 import Paragraph from "../../../typographies/Paragraph";
 import { Link, useParams } from "react-router-dom";
+import FilterContainer from "../../Filter/FilterContainer";
 
 const Component = () => {
   let { jobId } = useParams();
   return (
     <>
+      {/* <FilterContainer items={data} /> */}
       {data.map((job, key) => {
         return (
           <Link className="company_job" key={key} to={`/${job.id}`}>
