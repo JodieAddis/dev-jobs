@@ -5,6 +5,7 @@ import Paragraph from "../../../typographies/Paragraph";
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import FilterDesktop from "../../Filter/FilterDesktop";
+import IconFilter from "../../../icons/IconFilter";
 
 const Component = () => {
   let { jobId } = useParams();
@@ -26,7 +27,13 @@ const Component = () => {
 
   return (
     <>
-      <FilterDesktop onSearch={handleSearchSubmit} />
+      <div className="filter_container">
+        <FilterDesktop
+          onSearch={handleSearchSubmit}
+          iconSearch={<IconFilter kind="search" />}
+          iconLocation={<IconFilter kind="location" />}
+        />
+      </div>
       {jobName.map((item, key) => {
         return (
           <Link className="company_job" key={key} to={`/${item.id}`}>

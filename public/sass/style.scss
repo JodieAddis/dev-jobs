@@ -124,3 +124,38 @@ main {
     }
   }
 }
+
+.filter_container {
+  position: absolute;
+  z-index: 20;
+  top: 130px;
+  .filter_desktop {
+    background-color: $white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    .icon_filter {
+      display: flex;
+      align-items: center;
+    }
+    input {
+      border: none;
+      width: 270px;
+      color: $veryDarkBlue;
+      font-size: 16px;
+      margin-left: 15px;
+    }
+    .filter_btn {
+      @include button(123px, 48px, $violet, 10px);
+      color: $white;
+      font-weight: 700;
+      text-transform: capitalize;
+      font-size: 16px;
+      &:hover {
+        background-color: $lightViolet;
+        cursor: pointer;
+      }
+    }
+  }
+}

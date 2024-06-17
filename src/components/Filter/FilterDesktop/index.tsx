@@ -3,10 +3,11 @@ import Button from "../../Button";
 
 interface filterProps {
   onSearch: (text1: string) => void;
-  icon?: ReactNode;
+  iconSearch: ReactNode;
+  iconLocation: ReactNode;
 }
 
-const Component = ({ onSearch, icon }: filterProps) => {
+const Component = ({ onSearch, iconSearch }: filterProps) => {
   const [position, setPosition] = useState<string>("");
 
   const handleSearchClick = () => {
@@ -14,14 +15,22 @@ const Component = ({ onSearch, icon }: filterProps) => {
   };
 
   return (
-    <div className="flex flex-row  items-center">
-      <span>{icon}</span>
+    <div className="filter_desktop">
+      <span className="icon_filter">{iconSearch}</span>
       <input
         type="text"
+        placeholder="Filter by title, companies, expertise..."
         value={position}
         onChange={(e) => setPosition(e.target.value)}
       />
-      <Button content="search" onclick={handleSearchClick} css={""} />
+      <span className="icon_filter">{iconSearch}</span>
+      <input
+        type="text"
+        placeholder="Filter by location..."
+        value={position}
+        onChange={(e) => setPosition(e.target.value)}
+      />
+      <Button content="search" onclick={handleSearchClick} css="filter_btn" />
     </div>
   );
 };
