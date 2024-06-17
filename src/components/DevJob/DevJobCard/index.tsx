@@ -3,38 +3,30 @@ import data from "../../../data/data.json";
 import Heading from "../../../typographies/Heading";
 import Paragraph from "../../../typographies/Paragraph";
 import { Link, useParams } from "react-router-dom";
-import { ChangeEvent, FormEvent, useState } from "react";
-import Button from "../../Button";
+import { useState } from "react";
+import FilterDesktop from "../../Filter/FilterDesktop";
 
 const Component = () => {
   let { jobId } = useParams();
 
   const [jobName, setJobName] = useState(data);
-  const [searchValue, setSearchValue] = useState("");
 
-  const handleSearchClick = () => {
+  const handleSearchSubmit = (searchValue: string) => {
     if (searchValue === "") {
       setJobName(data);
       // Affiche toutes les données si la recherche est vide
     } else {
-      const filterBySearch = data.filter((item) =>
+      const filterByJob = data.filter((item) =>
         item.position.toLowerCase().includes(searchValue.toLowerCase())
       );
-      setJobName(filterBySearch);
+      setJobName(filterByJob);
       // Met à jour jobName avec les données filtrées
     }
   };
 
   return (
     <>
-      <div>
-        <input
-          type="text"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
-        <Button content="search" onclick={handleSearchClick} css={""} />
-      </div>
+      <FilterDesktop onSearch={handleSearchSubmit} />
       {jobName.map((item, key) => {
         return (
           <Link className="company_job" key={key} to={`/${item.id}`}>

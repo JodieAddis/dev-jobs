@@ -1,24 +1,27 @@
-import { ChangeEvent, useState } from "react";
+import { ReactNode, useState } from "react";
 import Button from "../../Button";
 
-const Component = () => {
-  const [itemFilter, setItemFilter] = useState<string>("");
+interface filterProps {
+  onSearch: (text1: string) => void;
+  icon?: ReactNode;
+}
+
+const Component = ({ onSearch, icon }: filterProps) => {
+  const [position, setPosition] = useState<string>("");
+
+  const handleSearchClick = () => {
+    onSearch(position);
+  };
 
   return (
-    <div className="absolute">
-      <form className="flex flex-row justify-center">
-        <div>ICON</div>
-        <div>
-          <input
-            type="text"
-            value={itemFilter}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              setItemFilter(e.target.value);
-            }}
-          />
-        </div>
-        <Button content="search" onclick={() => {}} css={""} />
-      </form>
+    <div className="flex flex-row  items-center">
+      <span>{icon}</span>
+      <input
+        type="text"
+        value={position}
+        onChange={(e) => setPosition(e.target.value)}
+      />
+      <Button content="search" onclick={handleSearchClick} css={""} />
     </div>
   );
 };
