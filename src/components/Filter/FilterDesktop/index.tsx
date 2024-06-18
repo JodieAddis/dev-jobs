@@ -2,7 +2,7 @@ import { ReactNode, useState } from "react";
 import Button from "../../Button";
 
 interface filterProps {
-  onSearch: (position: string, location: string) => void;
+  onSearch: (position: string, location: string, contract: boolean) => void;
   iconSearch: ReactNode;
   iconLocation: ReactNode;
 }
@@ -10,8 +10,9 @@ interface filterProps {
 const Component = ({ onSearch, iconSearch }: filterProps) => {
   const [position, setPosition] = useState<string>("");
   const [location, setLocation] = useState<string>("");
+  const [contract, setContract] = useState<boolean>(false);
   const handleSearchClick = () => {
-    onSearch(position, location);
+    onSearch(position, location, contract);
   };
 
   return (
@@ -29,6 +30,12 @@ const Component = ({ onSearch, iconSearch }: filterProps) => {
         placeholder="Filter by location..."
         value={location}
         onChange={(e) => setLocation(e.target.value)}
+      />
+      <label>full time</label>
+      <input
+        type="checkbox"
+        checked={contract}
+        onChange={(e) => setContract(e.target.checked)}
       />
       <Button content="search" onclick={handleSearchClick} css="filter_btn" />
     </div>

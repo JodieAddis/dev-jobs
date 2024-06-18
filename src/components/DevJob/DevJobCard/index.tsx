@@ -12,26 +12,10 @@ const Component = () => {
 
   const [devJob, setDevJob] = useState(data);
 
-  // const handleSearchSubmit = (searchValue: string) => {
-  //   if (searchValue === "") {
-  //     setJobName(data);
-  //     // Affiche toutes les données si la recherche est vide
-  //   } else {
-  //     const filterByJob = data.filter((item) =>
-  //       item.position.toLowerCase().includes(searchValue.toLowerCase())
-  //     );
-  //     const filterByLocation = data.filter((item) =>
-  //       item.location.toLowerCase().includes(searchValue.toLowerCase())
-  //     );
-  //     // Met à jour jobName avec les données filtrées
-  //     setJobName(filterByJob);
-  //     setLocation(filterByLocation);
-  //   }
-  // };
-
   const handleSearchSubmit = (
     searchPosition: string,
-    searchLocation: string
+    searchLocation: string,
+    searchContract: boolean
   ) => {
     // Filtrer par position
     let filteredData = data.filter((item) =>
@@ -42,6 +26,11 @@ const Component = () => {
       filteredData = filteredData.filter((item) =>
         item.location.toLowerCase().includes(searchLocation.toLowerCase())
       );
+      if (searchContract) {
+        filteredData = filteredData.filter((item) =>
+          item.contract.toLowerCase().includes("full time")
+        );
+      }
     }
     // Mettre à jour jobName avec les données filtrées
     setDevJob(filteredData);
