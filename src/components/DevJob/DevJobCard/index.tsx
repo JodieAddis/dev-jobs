@@ -32,7 +32,7 @@ const Component = () => {
         );
       }
     }
-    // Mettre à jour jobName avec les données filtrées
+    // Mise à jour de jobName avec les données filtrées
     setDevJob(filteredData);
   };
 
