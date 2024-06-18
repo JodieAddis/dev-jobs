@@ -10,19 +10,41 @@ import IconFilter from "../../../icons/IconFilter";
 const Component = () => {
   let { jobId } = useParams();
 
-  const [jobName, setJobName] = useState(data);
+  const [devJob, setDevJob] = useState(data);
 
-  const handleSearchSubmit = (searchValue: string) => {
-    if (searchValue === "") {
-      setJobName(data);
-      // Affiche toutes les données si la recherche est vide
-    } else {
-      const filterByJob = data.filter((item) =>
-        item.position.toLowerCase().includes(searchValue.toLowerCase())
+  // const handleSearchSubmit = (searchValue: string) => {
+  //   if (searchValue === "") {
+  //     setJobName(data);
+  //     // Affiche toutes les données si la recherche est vide
+  //   } else {
+  //     const filterByJob = data.filter((item) =>
+  //       item.position.toLowerCase().includes(searchValue.toLowerCase())
+  //     );
+  //     const filterByLocation = data.filter((item) =>
+  //       item.location.toLowerCase().includes(searchValue.toLowerCase())
+  //     );
+  //     // Met à jour jobName avec les données filtrées
+  //     setJobName(filterByJob);
+  //     setLocation(filterByLocation);
+  //   }
+  // };
+
+  const handleSearchSubmit = (
+    searchPosition: string,
+    searchLocation: string
+  ) => {
+    // Filtrer par position
+    let filteredData = data.filter((item) =>
+      item.position.toLowerCase().includes(searchPosition.toLowerCase())
+    );
+    // Filtrer à nouveau par location si searchLocation n'est pas vide
+    if (searchLocation !== "") {
+      filteredData = filteredData.filter((item) =>
+        item.location.toLowerCase().includes(searchLocation.toLowerCase())
       );
-      setJobName(filterByJob);
-      // Met à jour jobName avec les données filtrées
     }
+    // Mettre à jour jobName avec les données filtrées
+    setDevJob(filteredData);
   };
 
   return (
@@ -34,7 +56,7 @@ const Component = () => {
           iconLocation={<IconFilter kind="location" />}
         />
       </div>
-      {jobName.map((item, key) => {
+      {devJob.map((item, key) => {
         return (
           <Link className="company_job" key={key} to={`/${item.id}`}>
             <div

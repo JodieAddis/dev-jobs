@@ -2,16 +2,16 @@ import { ReactNode, useState } from "react";
 import Button from "../../Button";
 
 interface filterProps {
-  onSearch: (text1: string) => void;
+  onSearch: (position: string, location: string) => void;
   iconSearch: ReactNode;
   iconLocation: ReactNode;
 }
 
 const Component = ({ onSearch, iconSearch }: filterProps) => {
   const [position, setPosition] = useState<string>("");
-
+  const [location, setLocation] = useState<string>("");
   const handleSearchClick = () => {
-    onSearch(position);
+    onSearch(position, location);
   };
 
   return (
@@ -27,8 +27,8 @@ const Component = ({ onSearch, iconSearch }: filterProps) => {
       <input
         type="text"
         placeholder="Filter by location..."
-        value={position}
-        onChange={(e) => setPosition(e.target.value)}
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
       />
       <Button content="search" onclick={handleSearchClick} css="filter_btn" />
     </div>
